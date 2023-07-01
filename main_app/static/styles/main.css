@@ -1,0 +1,11 @@
+body{
+    background-color: aqua;
+}
+.my_nav{
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    left: 0;
+    top:10%;
+    transform: translateY(-50%);
+}
