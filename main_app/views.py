@@ -5,6 +5,9 @@ from django.views.generic.base import TemplateView
 from .models import Coral
 from django.views.generic.edit import CreateView
 from django.views.generic import DetailView
+from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse
 # Create your views here.
 class Home(TemplateView):
     template_name ="home.html"
@@ -23,8 +26,25 @@ class CoralCreate(CreateView):
     model=Coral
     fields =['name', 'img','info',]
     template_name = "coral_create.html"
-    success_url = "/coral/"
+    def get_success_url(self):
+        return reverse ('coral_detail', kwargs ={'pk':self.object.pk})
 
 class CoralDetail(DetailView):
     model= Coral
     template_name ='coral_detail.html'
+
+class CoralUpdate(UpdateView):
+     model=Coral
+     fields =['name', 'img','info',]
+     template_name = "coral_update.html"
+     def get_success_url(self):
+        return reverse ('coral_detail', kwargs ={'pk':self.object.pk})
+     
+class CoralDelete(DeleteView):
+     model=Coral
+     fields =['name', 'img','info',]
+     template_name = "coral_delete.html"
+     def get_success_url(self):
+        return reverse ('coral_detail', kwargs ={'pk':self.object.pk})
+     
+

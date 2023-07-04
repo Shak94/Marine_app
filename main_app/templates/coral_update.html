@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="pt-3"> Update  {{coral.name}} </h1>
+
+<form action ="" method="post">
+    {% csrf_ token %} {{form.as_p}} <input type ="submit" value="Submit" />
+</form>
+{% endblock %}

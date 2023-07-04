@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %}
 <div class="detail__img">
-    <img src="{{coral.image}}" alt="{{coral.name}}" />
+    <img src="{{coral.img}}" alt="{{coral.name}}" />
 </div>
 <div class="detail__name">
     <div class="icon-text">
@@ -15,7 +15,7 @@
 </div>
 <div class="detail__container">
     <div class="buttons">
-        <a href="" class="button is-info">
+        <a href="{% url coral_update coral.pk}" class="button is-info">
             <span class="icon">
                 <i class="fas fa-edit"></i>
             </span>
