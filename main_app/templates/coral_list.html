@@ -8,7 +8,7 @@
 <h1 class="title pt-5">A world of Coral!</h1>
 <div class="gallery">
   {% for coral in corals %}
-  <a href="">
+  <a href="{% url 'coral_detail' coral.pk %}">
     <div class="card">
       <div class="card-image">
         <figure class="image is-square">
@@ -24,7 +24,6 @@
 	{% empty %}
   <article class="message">
     <div class="message-header">
-      <p>No Artists Available</p>
     </div>
   </article>
   {% endfor %}
