@@ -1,8 +1,10 @@
 from django.urls import path
 from . import views
+from .models import Coral
 
 urlpatterns =[
     path('', views.Home.as_view(), name='home'),
     path('about/', views.About.as_view(), name='about'),
-    path('games/', views.GamesList.as_view(), name="game_list")
+    path('coral/', views.CoralList.as_view(), name="coral_list"),
+    path('coral/new/', views.CoralCreate.as_view(), name ="coral_create")
 ]

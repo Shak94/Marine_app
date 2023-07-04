@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'marine_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'marine_life'
+        'NAME': 'coral'
     }
 }
 

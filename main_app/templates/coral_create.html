@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %} 
+<h1> ADD A NEW TYPE OF CORAL TO THE LIST</h1>
+
+<form method="post">
+<!-- Security Features-->
+    {% csrf_token%}
+<!-- Generate inputs-->
+   {{form.as_p}}
+
+   <!-- Submit form-->
+   <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}
