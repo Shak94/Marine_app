@@ -8,6 +8,6 @@ urlpatterns =[
     path('coral/', views.CoralList.as_view(), name="coral_list"),
     path('coral/new/', views.CoralCreate.as_view(), name ="coral_create"),
     path('coral/<int:pk>', views.CoralDetail.as_view(), name ="coral_detail"),
-    path('coral/<int:pk>/update',views.CoralUpdate.as_view(), name ="coral_update"),
-    path('coral/<int:pk>/delete',views.CoralDelete.as_view(), name ="coral_delete")
+    path('coral/<int:pk>/update/',views.CoralUpdate.as_view(), name ="coral_update"),
+    path('coral/<int:pk>/delete/',views.CoralDelete.as_view(), name ="coral_delete")
 ]

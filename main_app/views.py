@@ -6,8 +6,8 @@ from .models import Coral
 from django.views.generic.edit import CreateView
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # Create your views here.
 class Home(TemplateView):
     template_name ="home.html"
@@ -45,6 +45,4 @@ class CoralDelete(DeleteView):
      fields =['name', 'img','info',]
      template_name = "coral_delete.html"
      def get_success_url(self):
-        return reverse ('coral_detail', kwargs ={'pk':self.object.pk})
-     
-
+        return reverse('coral_list')

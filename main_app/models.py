@@ -9,3 +9,16 @@ class Coral(models.Model):
 
     class Meta:
         ordering =["name"]
+
+class CoralTraits(models.Model):
+    diet = models.CharField(max_length=100)
+    toxicity_level =models.CharField(max_length=50)
+    rareity = models.CharField(max_length= 50)
+    coral = models.ForeignKey(Coral, on_delete=models.CASCADE, related_name='traits')
+    
+    def __str__(self):
+        return self.diet
+
+    class Meta:
+        ordering =["diet"]
+

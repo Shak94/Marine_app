@@ -15,17 +15,38 @@
 </div>
 <div class="detail__container">
     <div class="buttons">
-        <a href="{% url coral_update coral.pk}" class="button is-info">
+        <a href="{% url 'coral_update' coral.pk %}" class="button is-info">
             <span class="icon">
                 <i class="fas fa-edit"></i>
             </span>
         </a>
-        <a href="" class="button is-danger">
+        <a href="{% url 'coral_delete' coral.pk %}" class="button is-danger">
             <span class="icon">
                 <i class="fas fa-trash-alt"></i>
             </span>
         </a>
     </div>
+  <div class="detail__songs mb-5">
+    <h3 class="title is-3">Traits</h3>
+
+    {% for trait in coral.traits.all %}
+    <div class="trait">
+      <span>{{forloop.counter}}</span>
+      <div><b>Diet:</b> {{ trait.diet }}</div>
+      <div><b>Toxicity:</b> {{ trait.toxicity_level }}</div>
+      <div><b>Rarity:</b> {{ trait.rareity }}</div>
+      <br>
+    </div>
+		{% empty %}
+    <article class="message">
+      <div class="message-header">
+        <p>No traits Available</p>
+      </div>
+    </article>
+
+    {% endfor %}
+  </div>
+<!--  above about section  -->
     <div class="detail__about">
         <h4 class="title is-4">About</h4>
         <p>{{coral.info}}</p>
