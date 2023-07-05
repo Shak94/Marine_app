@@ -6,6 +6,21 @@
 {% block content %}
 
 <h1 class="title pt-5">A world of Coral!</h1>
+<form class="mb-5" method="get">
+  <div class="field has-addons">
+    <div class="control">
+      <!--  Our input will search by name of coral  -->
+      <input class="input" type="text" name="name" placeholder="name" />
+    </div>
+    <div class="control">
+      <input class="button is-success" type="submit" value="Search" />
+    </div>
+  </div>
+  <!--  This anchor tag will redirect back to coral list without a query param -->
+  <a class="button is-dark" href="{% url 'coral_list' %}">Clear Search</a>
+  <a class="button is-dark" href="{% url 'coral_create' %}">Add a Coral</a>
+</form>
+<div class="gallery">
 <div class="gallery">
   {% for coral in corals %}
   <a href="{% url 'coral_detail' coral.pk %}">
