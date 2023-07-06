@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'marine_project.wsgi.application'
 DATABASES = {
     # 'ENGINE': 'django.db.backends.postgresql',
     'default': dj_database_url.config(
-        default = f"postgres://{os.environ['DB_USER']}:{os.environ['DB_PW']}@{os.environ['DB_HOST']}/coarlworld",
+
         conn_max_age=600,
         conn_health_checks=True,
     )
