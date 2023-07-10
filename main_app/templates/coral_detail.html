@@ -28,7 +28,43 @@
     </div>
   <div class="detail__songs mb-5">
     <h3 class="title is-3">Traits</h3>
-
+    <form class="mb-5" action="{% url 'trait_create' coral.pk %}" method="post">
+      {% csrf_token %}
+      <div class="field has-addons">
+          <div class="control">
+              <input
+                  class="input"
+                  type="text"
+                  name="diet"
+                  placeholder="diet"
+                  required
+              />
+          </div>
+          <div class="control">
+              <input
+                  class="input"
+                  type="number"
+                  name="toxicity_level"
+                  placeholder="toxicity_level
+                  min="1"
+                  required
+              />
+          </div>
+          <div class="control">
+              <input
+                  class="input"
+                  type="number"
+                  name="rareity"
+                  placeholder="rareity"
+                  min="1"
+                  required
+              />
+          </div>
+          <div class="control">
+              <input class="button is-primary" type="submit" value="Add A Trait" />
+          </div>
+      </div>
+  </form>
     {% for trait in coral.traits.all %}
     <div class="trait">
       <span>{{forloop.counter}}</span>
